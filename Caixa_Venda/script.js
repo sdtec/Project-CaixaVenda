@@ -19,6 +19,7 @@ function enviar_vendas() {
     } else {
         valor_desconto = 0
     }
+    let numero_venda = pre_venda.length + 1;
     pre_venda.push([
         "<tr>" + "<td>" + numero_venda + "</td>" +
         "<td>" + nome_produto + "</td>" +
