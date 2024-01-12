@@ -6,7 +6,7 @@ let numero_venda = 0;
 let valor_desconto = 0;
 let valor_total = 0;
 let pre_venda = []
-
+let total_venda = []
 function enviar_vendas() {
     
     nome_produto = document.getElementById('nome_produto').value;
@@ -19,6 +19,8 @@ function enviar_vendas() {
     } else {
         valor_desconto = 0
     }
+    total_venda.push(valor_total);
+    let venda_total = pre_venda.join('+');
     pre_venda.push([
         "<tr>" + "<td>" + numero_venda + "</td>" +
         "<td>" + nome_produto + "</td>" +
@@ -30,8 +32,8 @@ function enviar_vendas() {
 
     ])
     let venda = pre_venda.join('');
+    document.getElementById("total_venda").innerHTML = venda_total;
     document.getElementById("Vendas").innerHTML = venda;
-
 }
 function calcularTotal() {
     
